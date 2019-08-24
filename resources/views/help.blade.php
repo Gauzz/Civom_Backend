@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V14</title>
+	<title>civom</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -33,7 +33,6 @@
 </head>
 <body>
 
-
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
@@ -41,47 +40,22 @@
 					Help And Support
 				</span>
 
-				<label class="label-input100" for="first-name">Your Name *</label>
-				<div class="wrap-input100 rs1 validate-input">
-					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 rs1 validate-input">
-					<input class="input100" type="text" name="last-name" placeholder="Last name">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="email">Email Address *</label>
-				<div class="wrap-input100 validate-input">
-					<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="phone">Phone Number</label>
-				<div class="wrap-input100">
-					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +91 *********">
-					<span class="focus-input100"></span>
-				</div>
-
-				<label class="label-input100" for="message">Message *</label>
-				<div class="wrap-input100 validate-input">
-					<textarea id="message" class="input100" name="message" placeholder="Please enter your comments..."></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							Submit
-							<i class="zmdi zmdi-arrow-right m-l-8"></i>
-						</span>
-					</button>
-                </div>
-                
             
-                <label class="label-input100" for="message">Lateralx *</label>
-                <label class="label-input100" for="message">contact no:- +91 ********* *</label>
-                <label class="label-input100" for="message">Address:- vasant vihar,indore *</label>
+               <div class="col-lg-6 col-sm-12 col-xs-12">
+<div class="contacts">
+<span><h5><i class="fas fa-home"></i></i><span style="width:500px; height:30px; margin-left: 15px">42, Vasant Vihar Colony, Indore, Madhya Pradesh, 452010</span></h5>
+<br>
+<span><h5><i class="fas fa-mobile-alt icon"></i><span style="width:400px; height:30px;margin-left: 10px">&nbsp;&nbsp;&nbsp;Custom support and sale: +91-7415738934<span>
+<br>
+<br>
+<span><h5> <i class="fas fa-envelope icon"></i> <span style="width:400px; height:30px;">&nbsp;&nbsp;Email: hello@lateralx.com</span></h5></span>
+<br>
+<br>
+<br>
+</span></span></h5></span></span></div>
+</div>
+
+			
 			</form>
 		</div>
 	</div>
@@ -122,7 +96,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <!--<div class="card-header">Help</div>-->
+                <div class="card-header"></div>
 
                 <div class="card-body">
                     @if (session('status'))
