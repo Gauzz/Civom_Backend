@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+    \App\Asset::chunk(1000,function($assets){
+        
+    });
     return view('auth.login');
 });
 Auth::routes();
@@ -20,6 +23,9 @@ Route::get('/help', 'HelpController@index')->name('help');
 Route::get('/analytics', 'analyticsController@index')->name('analytics');
 Route::get('/uploadfile','UploadController@upload');
 Route::post('upload', 'UploadController@upload');
+Route::get('home','UploadController@index');
+//Route::get('/home','UploadController@getData');
+//Route::get('/index', 'UploadController@index')->name('retrieve');
 //Route::get('upload', 'UserController@created');
 // Route::get('/getRequest',function(){
 //     if(Request::ajax()){

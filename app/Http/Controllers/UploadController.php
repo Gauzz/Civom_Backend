@@ -12,7 +12,24 @@ use validator;
 
 class UploadController extends Controller
 {
+
+    public function index(){
+        
+        $assets= Asset::all();
+        return view('home')->with('assets',$assets);
+        
+        // $asset = DB::table('assets')->get();
+
+        // return view('home', ['assets' => $asset]);
+    }
     //
+    // public function index()
+    // {
+    //     $assets= Asset::all()->toArray();
+    //     return view('layout.index' , compact('assets'));
+
+    // }
+    
         public function upload (Request $request) {
             // return $request->dae;
 
@@ -85,10 +102,25 @@ class UploadController extends Controller
            // $assets->texture=(public_path('assets/'.time()).$texturepath);
             $assets->thumbnail=(public_path('assets/'.time()).$thumbnailpath);
             $assets->save();
+
+
+
+            //return redirect()->route('layout.index')->with('success','Data Added');
     
             return  'name is '.$request;
             
          } 
+
+        //  function getData(){
+        //    $data['data']=DB::table('assets')->get();
+        //    if(count($data)>0)
+        //    {
+        //        return view('home',$data);
+        //    }
+        //    else{
+        //        return view('home');
+        //    }
+        // }
 
     }
           

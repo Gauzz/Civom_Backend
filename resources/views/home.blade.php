@@ -3,17 +3,55 @@
 
 @section('content')
 
+
 <div class="container">
    <!-- <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
             <div class="card-header"></div>-->
 
-
+            <table class="table table-bordered">
+            
                 <div class="col-md-14">
+                <div class="row">
+                
                 <button type="button" class="fas fa-plus" data-toggle="modal" data-target="#myModal" style="font-size:40px"></button>
+               
+               
+                <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name Of Product</th>
+      <th scope="col">Description</th>
+      <th scope="col">dae file</th>
+      <th scope="col">fbx file</th>
+      <th scope="col">texture</th>
+      <th scope="col">thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach ($assets as $value)
+    <tr>
+      <td>{{$value->id}}</th>
+      <td>{{$value->name}}</td>
+      <td>{{$value->description}}</td>
+      <td>{{$value->dae}}</td>
+      <td>{{$value->fbx}}</td>
+      <td>{{$value->texture}}</td>
+      <td>{{$value->thumbnail}}</td>
+    </tr>
+    @endforeach
+    
+  </tbody>
+</table>
+
+               </div>
+                
                 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
+    
+
+
     
       <!-- Modal content-->
      <div class="modal-content">
@@ -93,6 +131,9 @@
 					</button>
                 </div>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+
+
         </div>
       </div>
       
@@ -100,5 +141,6 @@
   </div>
   
 </div>
+
           
 @endsection
