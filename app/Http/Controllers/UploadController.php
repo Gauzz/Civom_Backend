@@ -14,27 +14,18 @@ class UploadController extends Controller
 {
 
     public function index(){
-        
-        $assets= Asset::all();
-        return view('home')->with('assets',$assets);
-        
-        // $asset = DB::table('assets')->get();
 
-        // return view('home', ['assets' => $asset]);
+     $assets = Asset::all();
+     return view('home')->with('assets',$assets);
     }
-    //
-    // public function index()
-    // {
-    //     $assets= Asset::all()->toArray();
-    //     return view('layout.index' , compact('assets'));
-
-    // }
+   
+   public function show($id){
+       $assets = Asset::find($id);
+       return view('home')->with('assets',$assets);
+   }
     
         public function upload (Request $request) {
-            // return $request->dae;
-
-            //  $name='';
-            // $description='';
+           
             $request->input('name');
              $daepath='';
              $fbxpath='';

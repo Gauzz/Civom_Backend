@@ -32,9 +32,8 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
-	<div class="container-contact100">
-		<div class="wrap-contact100">
+<div class="container-contact100">
+		<div class="wrap-contact100"  style="background-color:powderblue">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Help And Support
@@ -57,59 +56,58 @@
 
 			
 			</form>
-		</div>
-	</div>
+			<footer class="page-footer font-small special-color-dark pt-4">
 
+<!-- Footer Elements -->
+<br><br><br><br>
+<div class="container" style="background-color:powderblue" >
 
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+	<li class="list-inline-item">
+	  <a class="btn-floating btn-fb mx-1"  href=https://www.facebook.com/lateralx>
+		<i class="fab fa-facebook-f" style="font-size:40px"></i>
+	  </a>
+	</li>
+	<li class="list-inline-item">
+	  <a class="btn-floating btn-tw mx-1" href=https://www.instagram.com/LateralX_>
+		<i class="fab fa-instagram icon"  style="font-size:40px"> </i>
+	  </a>
+	</li>
+	<li class="list-inline-item">
+	  <a class="btn-floating btn-gplus mx-1" href=https://twitter.com/LateralX_>
+		<i class="fab fa-twitter icon" style="font-size:40px" > </i>
+	  </a>
+	</li>
+	<li class="list-inline-item">
+	  <a class="btn-floating btn-li mx-1"  href=https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Flateralx%2Fabout%2F>
+		<i class="fab fa-linkedin-in"  style="font-size:40px"> </i>
+	  </a>
+	</li>
+	<li class="list-inline-item">
+	  <a class="btn-floating btn-dribbble mx-1" href="http://lateralx.com">
+		<i class="fab fa-dribbble"  style="font-size:40px"> </i>
+		
+	  </a>
+	</li>
+  </ul>
+  <!-- Social buttons -->
 
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+</div>
+<!-- Footer Elements -->
 
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3" style="background-color:powderblue">© 2019 Copyright:
+  <a href="https://lateralx.com"> lateralx.com</a>
+</div>
+<!-- Copyright -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-
+</footer>
+<!-- Footer -->
 </body>
 </html>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"></div>
+		
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 

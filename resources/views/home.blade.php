@@ -10,7 +10,7 @@
             <div class="card">
             <div class="card-header"></div>-->
 
-            <table class="table table-bordered">
+            <table class="table table-bordered" table width="500">
             
                 <div class="col-md-14">
                 <div class="row">

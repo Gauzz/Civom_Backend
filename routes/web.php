@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    \App\Asset::chunk(1000,function($assets){
-        
+    \App\Asset::chunk(10000,function($assets)
+    {
+
     });
     return view('auth.login');
 });
@@ -24,6 +25,16 @@ Route::get('/analytics', 'analyticsController@index')->name('analytics');
 Route::get('/uploadfile','UploadController@upload');
 Route::post('upload', 'UploadController@upload');
 Route::get('home','UploadController@index');
+//Route::resource('home','UploadController');
+Route::get('/find',function(){
+    $assets = \App\Asset::find(101);
+    return view('home')->with('assets',$assets);
+    // foreach($assets as $value){
+       // return $assets->pname;
+
+    // }
+});
+//Route::resource('index','UploadController');
 //Route::get('/home','UploadController@getData');
 //Route::get('/index', 'UploadController@index')->name('retrieve');
 //Route::get('upload', 'UserController@created');

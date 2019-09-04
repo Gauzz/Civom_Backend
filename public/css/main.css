@@ -155,7 +155,7 @@ iframe {
   background: -webkit-linear-gradient(45deg, #c77ff2, #e8519e);
   background: -o-linear-gradient(45deg, #c77ff2, #e8519e);
   background: -moz-linear-gradient(45deg, #c77ff2, #e8519e);
-  background: linear-gradient(45deg, #c77ff2, #e8519e);
+  background: linear-gradient(45deg, white, white);
   
 }
 
@@ -179,6 +179,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+ 
 }
 
 .contact100-form-title {
@@ -190,6 +191,7 @@ iframe {
   line-height: 1.2;
   text-align: center;
   padding-bottom: 45px;
+  
 }
 
 
