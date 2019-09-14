@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/assets','UploadController@show');
+
+Route::get('/assets/{id}','UploadController@showbyid');
+Route::get('/categories/{category_name}','UploadController@showbycategory');
+Route::get('/search/{name}','UploadController@search');

@@ -19,11 +19,38 @@ class UploadController extends Controller
      return view('home')->with('assets',$assets);
     }
    
-   public function show($id){
-       $assets = Asset::find($id);
-       return view('home')->with('assets',$assets);
-   }
-    
+//    public function show($id){
+//        $assets = Asset::find($id);
+//        return view('home')->with('assets',$assets);
+//    }
+public function show()
+{
+    $assets = DB::select('select * from assets');
+     return response()->json($assets);
+}
+  
+
+    public function showbyid($id)
+{
+    $assets = Asset::find($id);
+    return response()->json($assets);
+}
+
+
+public function showbycategory($category_name)
+{
+    $assets = DB::select("select * from assets where category_name='$category_name'");
+     return response()->json($assets);
+}
+
+
+public function search($name)
+{
+    $assets = Asset::where('name', 'LIKE', '%'.$name.'%')->get();
+    return response()->json($assets);
+}
+
+   
         public function upload (Request $request) {
            
             $request->input('name');
@@ -77,12 +104,23 @@ class UploadController extends Controller
            // if($request->hasFile('texture'))
 
 
-            $files=$request->file('thumbnail');
+            $files=$request->file('thumbnail_compressed');
 
             $fileName = null;
-             if ($request->hasFile('thumbnail')) {
+             if ($request->hasFile('thumbnail_compressed')) {
                 $thumbnailpath = $files->getClientOriginalName().".".$files->getClientOriginalExtension();
                 $files->move(public_path('assets/'.time()), $thumbnailpath);
+
+            
+            }
+            $files=$request->file('category_name');
+
+            $fileName = null;
+             if ($request->hasFile('category_name')) {
+                $thumbnailpath = $files->getClientOriginalName().".".$files->getClientOriginalExtension();
+                $files->move(public_path('assets/'.time()), $thumbnailpath);
+
+            
             }
 
             $assets=new Asset;
@@ -113,6 +151,7 @@ class UploadController extends Controller
         //    }
         // }
 
+        
     }
           
 

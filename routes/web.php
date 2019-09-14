@@ -26,14 +26,14 @@ Route::get('/uploadfile','UploadController@upload');
 Route::post('upload', 'UploadController@upload');
 Route::get('home','UploadController@index');
 //Route::resource('home','UploadController');
-Route::get('/find',function(){
-    $assets = \App\Asset::find(101);
-    return view('home')->with('assets',$assets);
+// Route::get('/find',function(){
+//     $assets = \App\Asset::find(101);
+//     return view('home')->with('assets',$assets);
     // foreach($assets as $value){
        // return $assets->pname;
 
     // }
-});
+//});
 //Route::resource('index','UploadController');
 //Route::get('/home','UploadController@getData');
 //Route::get('/index', 'UploadController@index')->name('retrieve');
