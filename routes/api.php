@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 //Route for shows all the data from database show all assets API
 Route::get('/assets','UploadController@show');
 
@@ -31,3 +32,10 @@ Route::get('/search/{name}','UploadController@search');
 
 //Route for interested for item click then API is give id,email,phone no
 Route::post('/leads','LeadController@create');
+=======
+Route::get('/assets','UploadController@show');
+
+Route::get('/assets/{id}','UploadController@showbyid');
+Route::get('/categories/{category_name}','UploadController@showbycategory');
+Route::get('/search/{name}','UploadController@search');
+>>>>>>> 56316e03d22d6cadebfa4d8339c279977bfd1c8f

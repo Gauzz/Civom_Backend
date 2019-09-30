@@ -50,6 +50,41 @@ public function search($name)
 }
 
    
+<<<<<<< HEAD
+=======
+//    public function show($id){
+//        $assets = Asset::find($id);
+//        return view('home')->with('assets',$assets);
+//    }
+public function show()
+{
+    $assets = DB::select('select * from assets');
+     return response()->json($assets);
+}
+  
+
+    public function showbyid($id)
+{
+    $assets = Asset::find($id);
+    return response()->json($assets);
+}
+
+
+public function showbycategory($category_name)
+{
+    $assets = DB::select("select * from assets where category_name='$category_name'");
+     return response()->json($assets);
+}
+
+
+public function search($name)
+{
+    $assets = Asset::where('name', 'LIKE', '%'.$name.'%')->get();
+    return response()->json($assets);
+}
+
+   
+>>>>>>> 56316e03d22d6cadebfa4d8339c279977bfd1c8f
         public function upload (Request $request) {
            
             $request->input('name');
