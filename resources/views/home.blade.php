@@ -26,7 +26,9 @@
       <th scope="col">dae file</th>
       <th scope="col">fbx file</th>
       <th scope="col">texture</th>
-      <th scope="col">thumbnail</th>
+      <th scope="col">thumbnail Compreesed</th>
+      <th scope="col">thumbnail Original</th>
+      <th scope="col">Category Name</th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +40,9 @@
       <td>{{$value->dae}}</td>
       <td>{{$value->fbx}}</td>
       <td>{{$value->texture}}</td>
-      <td>{{$value->thumbnail}}</td>
+      <td>{{$value->thumbnail_compressed}}</td>
+      <td>{{$value->thumbnail_original}}</td>
+      <td>{{$value->category_name}}</td>
     </tr>
     @endforeach
     

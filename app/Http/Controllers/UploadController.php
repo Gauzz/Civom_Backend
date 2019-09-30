@@ -13,17 +13,43 @@ use validator;
 class UploadController extends Controller
 {
 
-    public function index(){
+    //index function is used to show all data at home page which is in databse table 
+    public function index()
+    {
 
      $assets = Asset::all();
      return view('home')->with('assets',$assets);
     }
+
+    //API show function is used for showing all the data from database 
+    public function show()
+{
+    $assets = DB::select('select * from assets');
+     return response()->json($assets);
+}
    
-   public function show($id){
-       $assets = Asset::find($id);
-       return view('home')->with('assets',$assets);
-   }
-    
+    //API showbyid function is used for show data by there id from databse which is saved in database table
+    public function showbyid($id)
+{
+    $assets = Asset::find($id);
+    return response()->json($assets);
+}
+
+    //API showbycategory function is used for showing the data by thier specific category
+public function showbycategory($category_name)
+{
+    $assets = DB::select("select * from assets where category_name='$category_name'");
+     return response()->json($assets);
+}
+
+    //API search function is used for searching data from database table
+public function search($name)
+{
+    $assets = Asset::where('name', 'LIKE', '%'.$name.'%')->get();
+    return response()->json($assets);
+}
+
+   
         public function upload (Request $request) {
            
             $request->input('name');
@@ -77,12 +103,23 @@ class UploadController extends Controller
            // if($request->hasFile('texture'))
 
 
-            $files=$request->file('thumbnail');
+            $files=$request->file('thumbnail_compressed');
 
             $fileName = null;
-             if ($request->hasFile('thumbnail')) {
+             if ($request->hasFile('thumbnail_compressed')) {
                 $thumbnailpath = $files->getClientOriginalName().".".$files->getClientOriginalExtension();
                 $files->move(public_path('assets/'.time()), $thumbnailpath);
+
+            
+            }
+            $files=$request->file('category_name');
+
+            $fileName = null;
+             if ($request->hasFile('category_name')) {
+                $thumbnailpath = $files->getClientOriginalName().".".$files->getClientOriginalExtension();
+                $files->move(public_path('assets/'.time()), $thumbnailpath);
+
+            
             }
 
             $assets=new Asset;
@@ -113,6 +150,7 @@ class UploadController extends Controller
         //    }
         // }
 
+        
     }
           
 
